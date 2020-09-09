@@ -33,6 +33,13 @@ const reducer = (state, action) => {
 
       return {...state, basket: newBasket};
     
+    // keep track of user
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.user
+      }
+    
     default:
       return state;
   }
