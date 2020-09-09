@@ -1,6 +1,6 @@
 export const initialState = {
   basket: [],
-  user : null
+  user: null,
 };
 
 // Selector
@@ -17,29 +17,31 @@ const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       };
-   
-    case "REMOVE_FROM_BASKET":
+
+    case 'REMOVE_FROM_BASKET':
       // return {...state, basket: state.filter.filter(item => item.id !== action.id)}
       // find the first match and return
-      const index = state.basket.findIndex((basketItem) => basketItem.id === action.id);
+      const index = state.basket.findIndex(
+        (basketItem) => basketItem.id === action.id
+      );
       let newBasket = [...state.basket]; // copy the basket
       if (index >= 0) {
         newBasket.splice(index, 1);
-
+      } else {
+        console.warn(
+          `Cant remove product {id : ${action.id} as its not in basket}`
+        );
       }
-      else {
-        console.warn(`Cant remove product {id : ${ action.id } as its not in basket}`);
-      }
 
-      return {...state, basket: newBasket};
-    
+      return { ...state, basket: newBasket };
+
     // keep track of user
     case 'SET_USER':
       return {
         ...state,
-        user: action.user
-      }
-    
+        user: action.user,
+      };
+
     default:
       return state;
   }
