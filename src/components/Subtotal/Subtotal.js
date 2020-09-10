@@ -3,9 +3,12 @@ import './Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from '../../StateProvider';
 import { getBasketTotal } from '../../reducer';
+import { useHistory } from 'react-router-dom';
 
 function Subtotal() {
 
+  // browser history (router)
+  const history = useHistory();
   const [{basket}, dispatch] = useStateValue();
 
   return (
@@ -14,12 +17,12 @@ function Subtotal() {
         renderText={(value) => (
           <>
             <p>Subtotal ({basket.length} items) :
-            <strong> {value} </strong>
+              <strong> {value} </strong>
             </p>
             <small className="subtotal__gift">
               <input type="checkbox" />This order contains a gift
             </small>
-        </>
+          </>
         )}
         decimalScale={2}
         value={getBasketTotal(basket)}
@@ -27,8 +30,8 @@ function Subtotal() {
         thousandsSeperator={true}
         prefix={"$"}
       />
-      
-      <button>Proceed to Checkout</button>
+      {/* push page into browser, instead of Link to  */}
+      <button onClick={e => history.push('/payment')}>Proceed to Checkout</button>
     </div>
   );
 }
