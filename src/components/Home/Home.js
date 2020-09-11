@@ -1,17 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import Product from '../Product/Product';
+import Carousel from 'react-bootstrap/Carousel';
 
 function Home() {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
   return (
     <div className="home">
       <div className="home__container">
-        <img
-          className="home__image"
-          src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/journeys/ZDQxYmY0MTYt/ZDQxYmY0MTYt-YTA3MjZjYWMt-w1500._CB404947428_.jpg"
-          // src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATA__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          alt=""
-        />
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+          <Carousel.Item>
+            <img
+              className="home__image"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/journeys/ZDQxYmY0MTYt/ZDQxYmY0MTYt-YTA3MjZjYWMt-w1500._CB404947428_.jpg"
+              alt="slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="home__image"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/journeys/MWJkMjYwNzAt/MWJkMjYwNzAt-OTE2Mjc3NDUt-w1500._CB404905545_.jpg"
+              alt="slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="home__image"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/journeys/MTU0NGZhYWQt/MTU0NGZhYWQt-YmIxNDMwOTEt-w1500._CB405104048_.jpg"
+              alt="slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="home__image"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonMusic/2020/Marketing/012020_AMHD_Q1/US-EN_012020_AMUHD_Q1promo_OS_GW_Hero_D_3000x1200_2X_CV2B._CB426550134_.jpg"
+              alt="slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="home__image"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/img20/events/bts/gateway/BTS20_GW_Desktop_Hero_DigEdResources_2x_3000x600_v2._CB429427081_.jpg"
+              alt="slide"
+            />
+          </Carousel.Item>
+        </Carousel>
+
         <div className="home__row">
           <Product
             id="12321341"
