@@ -12,7 +12,7 @@ const Order = ({ order }) => {
       <p className='order__id'>
         <small>{order.id}</small>
       </p>
-      {order.data.basket?.map(item => {
+      {order.data.basket?.map(item => (
         <CheckoutProduct
           key={item.id}
           id={item.id}
@@ -22,7 +22,7 @@ const Order = ({ order }) => {
           rating={item.rating}
           hideButton
         />
-      })}
+      ))}
 
       <CurrencyFormat 
         renderText={(value) => (

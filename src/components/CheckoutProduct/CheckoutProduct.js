@@ -27,8 +27,10 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
           {Array(rating).fill().map((_, i) => <p>⭐️</p>)}
         </div>
         {/*  if the user in orders page don't show the button */}
-        (!hideButton &&
-        {<button onClick={removeFromBasket}>Remove from basket</button>})
+
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from basket</button>
+        )}
       </div>
     </div>
   );

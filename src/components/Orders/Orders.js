@@ -12,31 +12,32 @@ const Orders = () => {
 
   // cloud firestore
   useEffect(() => {
-    if (user) {
-      db
+    if(user) {
+        db
         .collection('users')
-        .doc(user?uid)
+        .doc(user?.uid)
         .collection('orders')
         .orderBy('created', 'desc')
         .onSnapshot(snapshot => (
-          setOrders(snapshot.docs.map(doc => ({
-            id: doc.id,
-            data: doc.data()
-          })))
+            setOrders(snapshot.docs.map(doc => ({
+                id: doc.id,
+                data: doc.data()
+            })))
         ))
     } else {
-      setOrders([]);
+        setOrders([])
     }
-}, [user]);
+
+  }, [user])
 
   return (
     <div className="orders">
       <h1>Your Orders</h1>
       {/* firestore real time database */}
-      <div className="orders__order">
-        {orders?.map(order => {
+      <div className='orders__order'>
+        {orders?.map(order => (
           <Order order={order} />
-        })}
+        ))}
       </div>
     </div>
   );

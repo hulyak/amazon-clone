@@ -45,17 +45,34 @@ function Home() {
             rating={5}
           />
           <Product
-            id='12334566757'
+            id="12334566757"
             title="Shop medical supplies"
             price={49.99}
             image="https://images-na.ssl-images-amazon.com/images/G/01/US-hq/2020/img/Health_x26_Personal_Care/XCM_Manual_1239353_1269289_US_us_health_personal_care_consumables_desktop_cat_card_hpc_1237578_2_3240978_758x608_2X_en_US._SY608_CB408425348_.jpg"
             rating={5}
           />
+        </div>
+
+        <div className="home__row">
           <Product
-            id="234345667545"
+            id="23434566755"
             title="Deals on overstock shoes"
             price={14.99}
             image="https://images-na.ssl-images-amazon.com/images/G/01/AmazonServices/Site/US/Product/FBA/Outlet/Merchandising/Outlet_GW_SH_758x608_B07Z4CP5K1_920fe539._SY608_CB406458921_.jpg"
+            rating={5}
+          />
+          <Product
+            id="345546565767687"
+            title="JavaScript and JQuery: Interactive Front-End Web Development 1st Edition"
+            price={26.33}
+            image="https://images-na.ssl-images-amazon.com/images/I/41y31M-zcgL._SX400_BO1,204,203,200_.jpg"
+            rating={5}
+          />
+          <Product
+            id="456466563435"
+            title="JavaScript: The Good Parts: The Good Parts 1st Edition"
+            price={16.89}
+            image="https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg"
             rating={5}
           />
         </div>
