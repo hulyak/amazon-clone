@@ -45,7 +45,7 @@ function Home() {
             rating={5}
           />
           <Product
-            id="12334566757"
+            id='12334566757'
             title="Shop medical supplies"
             price={49.99}
             image="https://images-na.ssl-images-amazon.com/images/G/01/US-hq/2020/img/Health_x26_Personal_Care/XCM_Manual_1239353_1269289_US_us_health_personal_care_consumables_desktop_cat_card_hpc_1237578_2_3240978_758x608_2X_en_US._SY608_CB408425348_.jpg"
